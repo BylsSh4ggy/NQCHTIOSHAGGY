@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEQUI GLICH TIO/SHAGGY</title>
+    <style>
+        /* Estilos generales para centrar el contenido y añadir fondo */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://cdn.dribbble.com/users/252519/screenshots/14626703/media/fcba13702a402ca5d9f6de29f7b6d872.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Estilos del contenedor del formulario */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            padding: 2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Estilos de los elementos del formulario */
+        h2 {
+            color: #333;
+            margin-bottom: 1em;
+            font-size: 1.5em;
+        }
+
+        label {
+            display: block;
+            margin: 0.5em 0 0.2em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            background-color: #fff;
+            color: #333;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.7em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-bottom: 1em;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Botón LEEME en la parte inferior */
+        .leeme-button {
+            background-color: #444;
+            color: #fff;
+            padding: 0.5em 1em;
+            font-size: 0.9em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .leeme-button:hover {
+            background-color: #666;
+        }
+
+        /* Adaptación para pantallas pequeñas */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 1.5em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>NEQUI GLICH TIO/SHAGGY</h2>
+        <form id="apiForm" onsubmit="handleFormSubmit(event)">
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required maxlength="10" placeholder="3000000000">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="valor">Valor:</label>
+            <input type="number" id="valor" name="valor" required>
+
+            <label for="comprobante">Seleccionar Comprobante:</label>
+            <select id="comprobante" name="comprobante" required>
+                <option value="GeneradorNQGH1.php">Comprobante 1</option>
+                <option value="GeneradorNQGH2.php">Comprobante 2</option>
+                <option value="GeneradorNQGH3.php">Comprobante 3</option>
+            </select>
+
+            <button type="submit">Enviar</button>
+        </form>
+        
+        <!-- Botón LEEME -->
+        <a href="leeme.html" class="leeme-button">LEEME</a>
+    </div>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Evita el envío real del formulario
+
+            const numero = document.getElementById('numero').value;
+            const nombre = document.getElementById('nombre').value;
+            const valor = document.getElementById('valor').value;
+            const comprobante = document.getElementById('comprobante').value;
+
+            // Simula la redirección para descarga
+            alert('Formulario enviado. Redirigiendo al comprobante.');
+
+            // Redirigir a la URL del comprobante seleccionado
+            window.location.href = comprobante; // Esto redirige al archivo seleccionado
+        }
+    </script>
+</body>
+</html>
